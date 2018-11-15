@@ -1,3 +1,9 @@
+<!-- default file list -->
+*Files to look at*:
+
+* [WebForm1.aspx](./CS/ASPxPivotGridRegularDataSourceKPI/WebForm1.aspx) (VB: [WebForm1.aspx](./VB/ASPxPivotGridRegularDataSourceKPI/WebForm1.aspx))
+* [WebForm1.aspx.cs](./CS/ASPxPivotGridRegularDataSourceKPI/WebForm1.aspx.cs) (VB: [WebForm1.aspx](./VB/ASPxPivotGridRegularDataSourceKPI/WebForm1.aspx))
+<!-- default file list end -->
 # How to display KPI graphics in ASPxPivotGrid control bound to a regular data source
 
 
