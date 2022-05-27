@@ -1,7 +1,7 @@
 ﻿<%@ Page Language="vb" AutoEventWireup="true" CodeBehind="WebForm1.aspx.vb" 
 Inherits="ASPxPivotGridRegularDataSourceKPI.WebForm1" %>
 
-<%@ Register assembly="DevExpress.Web.ASPxPivotGrid.v14.1, Version=14.1.15.0, 
+<%@ Register assembly="DevExpress.Web.ASPxPivotGrid.v21.2, Version=21.2.7.0, 
 Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxPivotGrid" 
 tagprefix="dx" %>
 
@@ -17,20 +17,26 @@ tagprefix="dx" %>
     <div>
 
         <dx:ASPxPivotGrid ID="ASPxPivotGrid1" runat="server" ClientIDMode="AutoID" 
-            DataSourceID="AccessDataSource1" Theme="DevEx">
+            DataSourceID="SqlDataSource1" Theme="DevEx" IsMaterialDesign="False">
             <Fields>
                 <dx:PivotGridField ID="fieldCategoryName" Area="RowArea" AreaIndex="0" 
-                    Caption="Category Name" FieldName="CategoryName">
+                    Caption="Category Name">
+                    <DataBindingSerializable>
+                        <dx:DataSourceColumnBinding ColumnName="CategoryName" />
+                    </DataBindingSerializable>
                 </dx:PivotGridField>
-                <dx:PivotGridField ID="fieldExtendedPrice" Area="DataArea" AreaIndex="0" 
-                    FieldName="Extended Price">
+                <dx:PivotGridField ID="fieldExtendedPrice" Area="DataArea" AreaIndex="0">
+                    <DataBindingSerializable>
+                        <dx:DataSourceColumnBinding ColumnName="Extended Price" />
+                    </DataBindingSerializable>
                 </dx:PivotGridField>
             </Fields>
+            <OptionsData DataProcessingEngine="Optimized" />
         </dx:ASPxPivotGrid>
-        <asp:AccessDataSource ID="AccessDataSource1" runat="server" 
-            DataFile="~/App_Data/nwind.mdb" 
-            SelectCommand="SELECT * FROM [SalesPerson]"></asp:AccessDataSource>
-
+		    <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
+            ConnectionString="<%$ ConnectionStrings:ConnectionString %>" 
+            ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" 
+            SelectCommand="SELECT * FROM [SalesPerson]"></asp:SqlDataSource>
     </div>
     </form>
 </body>

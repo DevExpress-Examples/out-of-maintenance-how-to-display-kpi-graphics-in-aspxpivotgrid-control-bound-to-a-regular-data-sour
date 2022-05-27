@@ -18,9 +18,8 @@ namespace ASPxPivotGridRegularDataSourceKPI
                     DevExpress.XtraPivotGrid.PivotArea.DataArea);
 
                 // Sets a column's unbound type and specifies an unbound expression.
-                fieldStatus.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
-                fieldStatus.UnboundExpression = string.Format("(Iif([{0}]<100000,-1,Iif([{0}]<150000,0,1)))",
-                    fieldExtendedPrice.ExpressionFieldName);
+                fieldStatus.DataBinding = new ExpressionDataBinding(
+                    string.Format("Iif(Sum([{0}])<100000,-1,Sum([{0}])<150000,0,1)", fieldExtendedPrice.ExpressionFieldName));
 
                 // Sets the Data Header Area within which the "Status" Field can be positioned.
                 fieldStatus.AllowedAreas = DevExpress.XtraPivotGrid.PivotGridAllowedAreas.DataArea;
