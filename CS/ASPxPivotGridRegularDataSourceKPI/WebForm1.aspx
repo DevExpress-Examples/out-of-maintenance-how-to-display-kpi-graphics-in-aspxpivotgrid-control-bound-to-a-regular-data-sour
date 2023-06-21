@@ -1,7 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" 
 Inherits="ASPxPivotGridRegularDataSourceKPI.WebForm1" %>
 
-<%@ Register assembly="DevExpress.Web.ASPxPivotGrid.v21.2, Version=21.2.13.0, 
+<%@ Register assembly="DevExpress.Web.ASPxPivotGrid.v21.2, Version=21.2.14.0, 
 Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxPivotGrid" 
 tagprefix="dx" %>
 
